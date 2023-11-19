@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Finish the report",
+      "day": "Monday",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Attend team meeting",
+      "day": "Tuesday",
+      "reminder": false
+    },
+    {
+      "id": 3,
+      "text": "Submit project proposal",
+      "day": "Wednesday",
+      "reminder": true
+    }
+  ]
+}
