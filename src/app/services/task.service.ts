@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Task } from '../Task'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +19,16 @@ export class TaskService {
 
   getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.tasksApiUrl);
+  }
+
+  toggleTask(task: Task): Observable<Task> {
+    const apiUrl = `${this.tasksApiUrl}/${task.id}`;
+    const reminder = !task.reminder;
+    return this.http.patch<Task>(apiUrl, { reminder: reminder }, httpOptions);
+  }
+
+  deleteTask(task: Task): Observable<Task> {
+    const apiUrl = `${this.tasksApiUrl}/${task.id}`;
+    return this.http.delete<Task>(apiUrl);
   }
 }

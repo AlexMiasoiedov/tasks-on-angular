@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Task } from '../../Task'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -21,6 +21,18 @@ export class TaskItemComponent {
     day: '',
     reminder: false,
   };
+  // EMIT: declare emitter
+  @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
+  @Output() onToggleTask: EventEmitter<Task> = new EventEmitter();
 
   faTimes = faTimes;
+
+  onToggle(task: Task) {
+    this.onToggleTask.emit(task);
+  }
+
+  // EMIT: trigger emitter
+  deleteTask(task: Task) {
+    this.onDeleteTask.emit(task);
+  }
 }

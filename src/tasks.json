@@ -17,6 +17,12 @@
       "text": "Submit project proposal",
       "day": "Wednesday",
       "reminder": true
+    },
+    {
+      "id": 4,
+      "text": "Delete me",
+      "day": "Wednesday",
+      "reminder": true
     }
   ]
 }

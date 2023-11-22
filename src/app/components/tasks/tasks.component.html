@@ -1,1 +1,8 @@
-<app-task-item *ngFor="let task of tasks" [task]="task"></app-task-item>
+<app-add-task></app-add-task>
+<!-- EMIT: catch emitted event from child component `(onDeleteTask)="deleteTask(task)"` -->
+<app-task-item
+  (onDeleteTask)="deleteTask(task)"
+  (onToggleTask)="toggleTask(task)"
+  *ngFor="let task of tasks"
+  [task]="task"
+></app-task-item>

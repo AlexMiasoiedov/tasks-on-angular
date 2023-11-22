@@ -1,39 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+$font-family: "Poppins", sans-serif;
+$container-width: 500px;
+$container-height: 300px;
+$btn-background: #000;
+$btn-color: #fff;
+$btn-padding: 10px 20px;
+$btn-margin: 5px;
+$btn-border-radius: 5px;
+$btn-font-size: 15px;
+$form-control-margin: 20px 0;
+$form-control-input-width: 100%;
+$form-control-input-height: 40px;
+$form-control-input-margin: 5px;
+$form-control-input-padding: 3px 7px;
+$form-control-input-font-size: 17px;
+$form-control-check-height: 20px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  color: #333;
+  font-family: $font-family;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
+.container {
+  max-width: $container-width;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: $container-height;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
 }
-
-a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #0056b3;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-button {
-  cursor: pointer;
-}
-
 .btn {
-  background-color: #007bff;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  background: $btn-background;
+  color: $btn-color;
+  border: none;
+  padding: $btn-padding;
+  margin: $btn-margin;
+  border-radius: $btn-border-radius;
   cursor: pointer;
+  text-decoration: none;
+  font-size: $btn-font-size;
+  font-family: inherit;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
 }
 
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.form-control {
+  margin: $form-control-margin;
+}
+
+.form-control label {
+  display: block;
+}
+
+.form-control input {
+  width: $form-control-input-width;
+  height: $form-control-input-height;
+  margin: $form-control-input-margin;
+  padding: $form-control-input-padding;
+  font-size: $form-control-input-font-size;
+}
+
+.form-control-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control-check label {
+  flex: 1;
+}
+
+.form-control-check input {
+  flex: 2;
+  height: $form-control-check-height;
+}
