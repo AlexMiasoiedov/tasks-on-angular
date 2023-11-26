@@ -28,6 +28,12 @@ export class TasksComponent {
     });
   }
 
+  addTask(newTask: Task) {
+    this.taskService.addTask(newTask).subscribe((task) => {
+      this.tasks.push(task);
+    })
+  }
+
   // EMIT: emitted event calls component method
   deleteTask(task: Task) {
     this.taskService.deleteTask(task).subscribe(() => (this.tasks = this.tasks.filter(t => t.id !== task.id)));

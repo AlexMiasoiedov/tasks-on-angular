@@ -27,6 +27,10 @@ export class TaskService {
     return this.http.patch<Task>(apiUrl, { reminder: reminder }, httpOptions);
   }
 
+  addTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.tasksApiUrl, task, httpOptions);
+  }
+
   deleteTask(task: Task): Observable<Task> {
     const apiUrl = `${this.tasksApiUrl}/${task.id}`;
     return this.http.delete<Task>(apiUrl);

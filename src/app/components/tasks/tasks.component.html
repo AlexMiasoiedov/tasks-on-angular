@@ -1,4 +1,4 @@
-<app-add-task></app-add-task>
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
 <!-- EMIT: catch emitted event from child component `(onDeleteTask)="deleteTask(task)"` -->
 <app-task-item
   (onDeleteTask)="deleteTask(task)"
