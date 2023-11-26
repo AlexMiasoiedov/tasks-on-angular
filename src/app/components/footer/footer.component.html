@@ -1,0 +1,5 @@
+<footer>
+  <p>© 2023 - Todos los derechos reservados</p>
+  <a *ngIf="hasRoute('/')" routerLink="/about">About</a>
+  <a *ngIf="!hasRoute('/')" routerLink="/">Go Back</a>
+</footer>

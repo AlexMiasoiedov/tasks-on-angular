@@ -1,3 +1,6 @@
+## Application Screenshot
+![Tasks Screenshot](./tasks-img.png)
+
 ## start dev server
 ```bash
 ng serve
@@ -32,6 +35,4 @@ export class TaskItemComponent {
 }
 ```
 
-```html
 
-```
